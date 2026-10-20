@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Bisha — دليلك السياحي لمدينة بيشة</title>
+  <meta name="description" content="دليلك السياحي والخدمي المتكامل لاستكشاف مدينة بيشة — خريطة تفاعلية للمساجد والمطاعم والمستشفيات والمعالم.">
+  <link rel="icon" href__="https://media.base44.com/images/public/6aca645eafa4c4aa5f34ec18/ed5449892_generated_image.png">
+  <link rel="stylesheet" href__="css/styles.css">
+  <link rel="stylesheet" href__="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <!-- ===== الواجهة الرئيسية ===== -->
+  <section id="homeView">
+    <div class="hero">
+      <img class="hero-bg" src="https://media.base44.com/images/public/6aca645eafa4c4aa5f34ec18/e3c0f2824_generated_image.png" alt="بيشة">
+      <div class="hero-overlay"></div>
+      <div class="hero-card">
+        <img class="hero-logo" src="https://media.base44.com/images/public/6aca645eafa4c4aa5f34ec18/ed5449892_generated_image.png" alt="Visit Bisha">
+        <h1 class="hero-title">Visit <span>Bisha</span></h1>
+        <p class="hero-sub">اكتشف بيشة بطريقة أسهل وأجمل</p>
+        <p class="hero-desc">استكشف المطاعم والمقاهي والمستشفيات والحدائق والمعالم من خلال خريطة تفاعلية.</p>
+        <button class="hero-btn" onclick="showMap('all')">🚀 ابدأ الاستكشاف</button>
+        <div class="hero-stats">
+          <span>✨</span><span id="placeCount">...</span>
+          <span>·</span><span>📍</span><span>11 تصنيفات</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="categories-section">
+      <h2 class="categories-title">الخدمات الأساسية</h2>
+      <div class="categories-grid" id="catGrid"></div>
+    </section>
+
+    <footer class="footer"><p>Visit Bisha — دليلك السياحي لمدينة بيشة</p></footer>
+  </section>
+
+  <!-- ===== صفحة الخريطة ===== -->
+  <div id="mapView" class="map-page" style="display:none">
+    <header class="map-header">
+      <button class="back-btn" onclick="showHome()">→</button>
+      <div class="map-title">
+        <h1>خريطة بيشة التفاعلية</h1>
+        <p id="placeCountMap">0 مكان</p>
+      </div>
+      <button class="view-toggle" id="viewToggle">☰</button>
+    </header>
+    <div class="chips-bar" id="chipsBar"></div>
+    <div class="map-wrap">
+      <div id="map"></div>
+      <button class="locate-btn" id="locateBtn" title="موقعي">📍</button>
+      <div class="place-sheet" id="placeSheet">
+        <div class="sheet-handle"></div>
+        <button class="sheet-close" id="sheetClose">✕</button>
+        <div class="sheet-body" id="sheetBody"></div>
+      </div>
+      <div class="list-view" id="listView" style="display:none;"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
